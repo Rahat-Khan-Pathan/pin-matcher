@@ -1,3 +1,4 @@
+// Other Buttons except 0-9 
 const generateButton = document.getElementById('generate-btn');
 const pinViewer = document.getElementById('pin-viewer');
 const myPinViewer = document.getElementById('my-pin-viewer');
@@ -8,6 +9,7 @@ const backspaceButton = document.getElementById('backspace-btn');
 const clearButton = document.getElementById('clear-btn');
 const totalTry = document.getElementById('try');
 
+// All buttons from 0-9
 const button0 = document.getElementById('btn-0');
 const button1 = document.getElementById('btn-1');
 const button2 = document.getElementById('btn-2');
@@ -22,7 +24,7 @@ const button9 = document.getElementById('btn-9');
 
 var value;
 var myValue='';
-var count=3;
+var count=3; //try
 function showPin(value)
 {
     pinViewer.value = value;
@@ -40,6 +42,10 @@ generateButton.addEventListener('click',function(event)
     value=Math.ceil(Math.random()*9999);
     if(value<1000) value+=1000;
     showPin(value);
+    notifyYes.style.display = 'none';
+    notifyNo.style.display = 'none';
+    myValue='';
+    showMyPin(myValue);
 })
 button0.addEventListener('click',function(event)
 {
