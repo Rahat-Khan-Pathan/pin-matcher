@@ -39,8 +39,25 @@ generateButton.addEventListener('click',function(event)
 
 // All buttons using eventBubble 
 document.getElementById('key-pad').addEventListener('click',function(event){
-    myValue+=(event.target.innerText);
-    showMyPin(myValue);
+    let val = event.target.innerText;
+    if(isNaN(val))
+    {
+        if(val=='<')
+        {
+            myValue=myValue.substring(0,myValue.length-1);
+            showMyPin(myValue);
+        }
+        if(val=='C')
+        {
+            myValue='';
+            showMyPin(myValue);
+        }
+    }
+    else
+    {
+        myValue+=(val);
+        showMyPin(myValue);
+    }
 })
 submitButton.addEventListener('click',function(event)
 {
