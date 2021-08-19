@@ -22,7 +22,8 @@ function showMyPin(myValue)
 }
 function showTry(count)
 {
-    totalTry.innerHTML = count;
+    if(count == 0) totalTry.innerHTML = "You have reached limit. Generate new pin";
+    else totalTry.innerHTML = count;
 }
 
 // Generate button 
